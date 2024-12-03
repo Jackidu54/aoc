@@ -1,5 +1,9 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
+import {setupCalendar} from 'v-calendar';
 import './style.css'
 import App from './App.vue'
+import 'v-calendar/style.css';
 
-createApp(App).mount('#app')
+createApp(App)
+    .use(setupCalendar, {})
+    .mount('#app')
