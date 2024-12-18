@@ -7,7 +7,7 @@ export abstract class DaySolver {
 
     fetch(): Promise<string> {
         return fetch(
-            "input/" + this.date.getFullYear() + "/day/" + (this.date.getDay() + 1) + "/input"
+            "input/" + this.date.getFullYear() + "/day/" + (this.date.getDate()) + "/input"
         ).then(response => response.text().then(str => str.trimEnd())
         )
     }
