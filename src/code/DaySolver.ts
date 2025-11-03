@@ -16,6 +16,6 @@ export abstract class DaySolver {
         return true
     }
 
-    abstract compute1(input: string): string;
-    abstract compute2(input: string): string;
+    abstract compute1(input: string): any;
+    abstract compute2(input: string): any;
 }

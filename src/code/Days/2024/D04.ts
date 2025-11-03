@@ -1,7 +1,7 @@
 import {DaySolver} from "../../DaySolver.ts";
 
 export class D04 extends DaySolver {
-    compute1(input: string): string {
+    compute1(input: string): any {
         return "" + [
             new Array(input.split('\n')[0].length).fill("0"),
             new Array(input.split('\n')[0].length).fill("0"),
@@ -26,7 +26,7 @@ export class D04 extends DaySolver {
             ), 0)
     }
 
-    compute2(input: string): string {
+    compute2(input: string): any {
         return "" + [
             new Array(input.split('\n')[0].length).fill("0"),
             new Array(input.split('\n')[0].length).fill("0"),

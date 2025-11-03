@@ -1,7 +1,7 @@
 import {DaySolver} from "../../DaySolver.ts";
 
 export class D07 extends DaySolver {
-    compute1(input: string): string {
+    compute1(input: string): any {
         return "" + input.split('\n')
             .map(l => ({result: parseInt(l.split(": ")[0]), vals: l.split(": ")[1].split(" ").map(i => parseInt(i))}))
             .filter(l => this.generateOperations(l.vals, ['+', '*']).some(op => op.result === l.result))
@@ -10,7 +10,7 @@ export class D07 extends DaySolver {
     }
 
 
-    compute2(input: string): string {
+    compute2(input: string): any {
         return "" + input.split('\n')
             .map(l => ({result: parseInt(l.split(": ")[0]), vals: l.split(": ")[1].split(" ").map(i => parseInt(i))}))
             .filter(l => this.generateOperations(l.vals, ['+', '*', 'c']).some(op => op.result === l.result))

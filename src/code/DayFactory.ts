@@ -7,6 +7,7 @@ import {D05} from "./Days/2024/D05.ts";
 import {D06} from "./Days/2024/D06.ts";
 import {D07} from "./Days/2024/D07.ts";
 import {D08} from "./Days/2024/D08.ts";
+import {D09} from "./Days/2024/D09.ts";
 class DayFactory {
     create(date: Date): DaySolver {
         const dateStr = date.getFullYear() + "" + (date.getDate())
@@ -19,11 +20,13 @@ class DayFactory {
             case "20246": return new D06(date);
             case "20247": return new D07(date);
             case "20248": return new D08(date);
+            case "20249": return new D09(date);
             default: return new class extends DaySolver {
-                compute2(input: string): string {
+                compute2(input: string): any {
                     return input;
                 }
-                compute1(input: string): string {
+
+                compute1(input: string): any {
                     return input;
                 }
                 get available() {

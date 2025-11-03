@@ -3,7 +3,7 @@ import {DaySolver} from "../../DaySolver.ts";
 export class D06 extends DaySolver {
 
     // input contains only ".", "#", "^", "v", "<", ">", "\n"
-    compute1(input: string): string {
+    compute1(input: string): any {
         const map = new Map<string, string>()
         const knownPos: string[] = []
         input.split('\n').forEach((line, y) =>
@@ -39,7 +39,7 @@ export class D06 extends DaySolver {
         return Array.from(new Set(knownPos.map(i => i.substring(1)))).length + "";
     }
 
-    compute2(input: string): string {
+    compute2(input: string): any {
         const map = new Map<string, string>()
         const posParcours: string[] = []
         input.split('\n').forEach((line, y) =>

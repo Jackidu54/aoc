@@ -1,7 +1,7 @@
 import {DaySolver} from "../../DaySolver.ts";
 
 export class D01 extends DaySolver {
-    compute1(input: string): string {
+    compute1(input: string): any {
         return "" + input.split('\n')
             .map((line: string) => line.split("   ").map(item => parseInt(item)))
             .reduce((res: number[][], line: number[]) => [
@@ -12,7 +12,7 @@ export class D01 extends DaySolver {
 
     }
 
-    compute2(input: string): string {
+    compute2(input: string): any {
         const map = new Map<number, number>();
         return "" + input.split('\n')
             .map((line: string) => line.split("   ").map(item => parseInt(item)))
