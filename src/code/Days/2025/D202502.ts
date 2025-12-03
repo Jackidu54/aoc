@@ -2,7 +2,7 @@ import {DaySolver} from "../../DaySolver.ts";
 
 export class D202502 extends DaySolver {
     compute1(input: string): any {
-        let res = []
+        let res: number[] = []
         input.split(',')
             .map(item => item.split('-').map(i => parseInt(i)))
             .forEach(items => {
@@ -18,7 +18,7 @@ export class D202502 extends DaySolver {
     }
 
     compute2(input: string): any {
-        let res = []
+        let res: number[] = []
         input.split(',')
             .map(item => item.split('-').map(i => parseInt(i)))
             .forEach(items => {
@@ -28,7 +28,6 @@ export class D202502 extends DaySolver {
                             if (strItem.length > 1) {
                                 for (let i = 0; i < item.toString().length / 2; i++) {
                                     if (strItem.match(new RegExp(`^(${item.toString().substring(0,i+1)})+$`))) {
-                                        console.log(`^(${item.toString().substring(0, i + 1)})+$`, item)
                                         res.push(item)
                                         break
                                     }

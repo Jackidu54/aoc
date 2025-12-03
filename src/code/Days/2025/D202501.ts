@@ -6,10 +6,10 @@ export class D202501 extends DaySolver {
         input.replace(/L/g, "-").replace(/R/g, "").split('\n')
             .map(eval)
             .reduce((previousValue, currentValue) => {
-                if(previousValue===0){
+                if (previousValue === 0) {
                     cnt++
                 }
-                return (previousValue + currentValue) %100
+                return (previousValue + currentValue) % 100
             }, 50)
         return cnt
     }
@@ -19,13 +19,12 @@ export class D202501 extends DaySolver {
         input.replace(/L/g, "-").replace(/R/g, "").split('\n')
             .map(eval)
             .reduce((previousValue, currentValue) => {
-                let tmp = (currentValue+previousValue)
-                cnt += Math.floor(Math.abs(tmp/100))
-                if((previousValue > 0 && tmp < 0) || (previousValue < 0 && tmp > 0) || tmp === 0){
+                let tmp = (currentValue + previousValue)
+                cnt += Math.floor(Math.abs(tmp / 100))
+                if ((previousValue > 0 && tmp < 0) || (previousValue < 0 && tmp > 0) || tmp === 0) {
                     cnt++
                 }
-                console.log(cnt, tmp, tmp%100)
-                return tmp %100
+                return tmp % 100
             }, 50)
         return cnt
     }

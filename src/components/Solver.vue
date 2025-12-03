@@ -17,8 +17,8 @@ function onDayChange(date: Date) {
   daySolver.value = dayFactory.create(date)
 }
 
-function fetchInput(){
-  daySolver.value.fetch().then(txt => dayInput.value=txt).then(submit)
+function fetchInput() {
+  daySolver.value.fetch().then(txt => dayInput.value = txt).then(submit)
 }
 </script>
 
