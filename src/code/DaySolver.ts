@@ -5,15 +5,12 @@ export abstract class DaySolver {
         this.date = date
     }
 
-    fetch(): Promise<string> {
-        return fetch(
+    async fetch(): Promise<string> {
+        let response = await fetch(
             "input/" + this.date.getFullYear() + "/day/" + (this.date.getDate()) + "/input"
-        ).then(response => response.text().then(str => str.trimEnd())
-        )
-    }
-
-    get available() {
-        return true
+        );
+        let str = await response.text();
+        return str.trimEnd();
     }
 
     abstract compute1(input: string): any;

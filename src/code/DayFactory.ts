@@ -12,7 +12,7 @@ import {D202501} from "./Days/2025/D202501.ts";
 import {D202502} from "./Days/2025/D202502.ts";
 import {D202503} from "./Days/2025/D202503.ts";
 class DayFactory {
-    create(date: Date): DaySolver {
+    create(date: Date): DaySolver|null {
         const dateStr = date.getFullYear() + "" + (date.getDate())
         switch (dateStr) {
             case "20241": return new D01(date);
@@ -35,18 +35,7 @@ class DayFactory {
             // case "20257": return new D202507(date);
             // case "20258": return new D202508(date);
             // case "20259": return new D202509(date);
-            default: return new class extends DaySolver {
-                compute2(input: string): any {
-                    return input;
-                }
-
-                compute1(input: string): any {
-                    return input;
-                }
-                get available() {
-                    return false;
-                }
-            }(date)
+            default: return null
         }
     }
 }

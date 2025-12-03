@@ -1,34 +1,31 @@
 <script setup lang="ts">
 import {DatePicker} from "v-calendar";
-import {dayFactory} from "../code/DayFactory.ts";
 import {ref} from "vue";
+import {useDaySolverStore} from "../stores/daySolverStore.ts";
 
 let result1 = ref("")
 let result2 = ref("")
 let dayInput = ref("")
-let daySolver = ref(dayFactory.create(new Date()))
+const daySolverStore = useDaySolverStore()
 
 function submit() {
-  result1.value = daySolver.value.compute1(dayInput.value)
-  result2.value = daySolver.value.compute2(dayInput.value)
+  result1.value = daySolverStore.daySolver?.compute1(dayInput.value)
+  result2.value = daySolverStore.daySolver?.compute2(dayInput.value)
 }
 
-function onDayChange(date: Date) {
-  daySolver.value = dayFactory.create(date)
-}
 
 function fetchInput() {
-  daySolver.value.fetch().then(txt => dayInput.value = txt).then(submit)
+  daySolverStore.daySolver?.fetch().then(txt => dayInput.value = txt).then(submit)
 }
 </script>
 
 <template>
   <div class="vertical">
-    <DatePicker @update:modelValue="onDayChange"></DatePicker>
-    <button @click="fetchInput" :disabled="!daySolver.available">Fetch</button>
-    <textarea v-model="dayInput" @change="submit" class="textarea" :disabled="!daySolver.available"></textarea>
-    <div>{{ daySolver.available ? result1 : "Aucun solveur pour cette date" }}</div>
-    <div>{{ daySolver.available ? result2 : "" }}</div>
+    <DatePicker @update:modelValue="daySolverStore.changeDay"></DatePicker>
+    <button @click="fetchInput" :disabled="!daySolverStore.daySolverAvailable">Fetch</button>
+    <textarea v-model="dayInput" @change="submit" class="textarea" :disabled="!daySolverStore.daySolverAvailable"></textarea>
+    <div>{{ daySolverStore.daySolverAvailable ? result1 : "Aucun solveur pour cette date" }}</div>
+    <div>{{ daySolverStore.daySolverAvailable ? result2 : "" }}</div>
   </div>
 
 </template>
