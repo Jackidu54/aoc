@@ -1,6 +1,6 @@
 import {DaySolver} from "../../DaySolver.ts";
 
-export class D03 extends DaySolver {
+export class D202403 extends DaySolver {
     compute1(input: string): any {
         return "" + input.match(/mul\(\d+,\d+\)/g)!
             .map(i => i.replace(/mul\((\d+),(\d+)\)/, "$1,$2")

@@ -1,6 +1,6 @@
 import {DaySolver} from "../../DaySolver.ts";
 
-export class D06 extends DaySolver {
+export class D202406 extends DaySolver {
 
     // input contains only ".", "#", "^", "v", "<", ">", "\n"
     compute1(input: string): any {

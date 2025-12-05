@@ -1,6 +1,6 @@
 import {DaySolver} from "../../DaySolver.ts";
 
-export class D05 extends DaySolver {
+export class D202405 extends DaySolver {
     compute1(input: string): any {
         const map = new Map<string, string[]>();
         input.split('\n\n')[0]

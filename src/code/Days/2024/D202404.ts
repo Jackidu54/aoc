@@ -1,6 +1,6 @@
 import {DaySolver} from "../../DaySolver.ts";
 
-export class D04 extends DaySolver {
+export class D202404 extends DaySolver {
     compute1(input: string): any {
         return "" + [
             new Array(input.split('\n')[0].length).fill("0"),

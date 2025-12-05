@@ -1,13 +1,13 @@
 import {DaySolver} from "./DaySolver.ts";
-import {D01} from "./Days/2024/D01.ts";
-import {D02} from "./Days/2024/D02.ts";
-import {D03} from "./Days/2024/D03.ts";
-import {D04} from "./Days/2024/D04.ts";
-import {D05} from "./Days/2024/D05.ts";
-import {D06} from "./Days/2024/D06.ts";
-import {D07} from "./Days/2024/D07.ts";
-import {D08} from "./Days/2024/D08.ts";
-import {D09} from "./Days/2024/D09.ts";
+import {D202401} from "./Days/2024/D202401.ts";
+import {D202402} from "./Days/2024/D202402.ts";
+import {D202403} from "./Days/2024/D202403.ts";
+import {D202404} from "./Days/2024/D202404.ts";
+import {D202405} from "./Days/2024/D202405.ts";
+import {D202406} from "./Days/2024/D202406.ts";
+import {D202407} from "./Days/2024/D202407.ts";
+import {D202408} from "./Days/2024/D202408.ts";
+import {D202409} from "./Days/2024/D202409.ts";
 import {D202501} from "./Days/2025/D202501.ts";
 import {D202502} from "./Days/2025/D202502.ts";
 import {D202503} from "./Days/2025/D202503.ts";
@@ -17,15 +17,15 @@ class DayFactory {
     create(date: Date): DaySolver|null {
         const dateStr = date.getFullYear() + "" + (date.getDate())
         switch (dateStr) {
-            case "20241": return new D01(date);
-            case "20242": return new D02(date);
-            case "20243": return new D03(date);
-            case "20244": return new D04(date);
-            case "20245": return new D05(date);
-            case "20246": return new D06(date);
-            case "20247": return new D07(date);
-            case "20248": return new D08(date);
-            case "20249": return new D09(date);
+            case "20241": return new D202401(date);
+            case "20242": return new D202402(date);
+            case "20243": return new D202403(date);
+            case "20244": return new D202404(date);
+            case "20245": return new D202405(date);
+            case "20246": return new D202406(date);
+            case "20247": return new D202407(date);
+            case "20248": return new D202408(date);
+            case "20249": return new D202409(date);
 
 
             case "20251": return new D202501(date);
